@@ -260,15 +260,15 @@ function App() {
             <p>
               MADE WITH{" "}
               <span className="heart">♥</span>
-              {" "}FROM
+              {" "}AND ADMIRATION
             </p>
 
             <h3>
-              TEAM SRK LUCKNOW
+              A HEARTFELT FAN
             </h3>
 
             <span className="footer-tagline">
-              ONE KING · ONE BILLION HEARTS
+              WITH LOVE, FROM LAVISH
             </span>
 
             <span className="footer-line"></span>
@@ -370,8 +370,8 @@ function App() {
               {hasWished
                 ? "♥ WISH SENT TO THE KING"
                 : loading
-                ? "CONNECTING..."
-                : "♛ SEND YOUR WISH"}
+                  ? "CONNECTING..."
+                  : "♛ SEND YOUR WISH"}
 
             </button>
 
