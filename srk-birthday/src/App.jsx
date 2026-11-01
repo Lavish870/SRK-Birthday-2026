@@ -260,15 +260,15 @@ function App() {
             <p>
               MADE WITH{" "}
               <span className="heart">♥</span>
-              {" "}AND ADMIRATION
+              {" "}FROM
             </p>
 
             <h3>
-              A HEARTFELT FAN
+              TeamSRK Lucknow
             </h3>
 
             <span className="footer-tagline">
-              WITH LOVE, FROM LAVISH
+              ONE KING · ONE BILLION HEARTS
             </span>
 
             <span className="footer-line"></span>
