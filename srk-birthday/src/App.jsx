@@ -253,29 +253,29 @@ function App() {
 
         <aside className="desktop-left">
 
-          <div className="team-footer">
+  <div className="team-footer">
 
-            <span className="footer-line"></span>
+    <span className="footer-line"></span>
 
-            <p>
-              MADE WITH{" "}
-              <span className="heart">♥</span>
-              {" "}FROM
-            </p>
+    <p>
+      MADE WITH{" "}
+      <span className="heart">♥</span>
+      {" "}AND ADMIRATION
+    </p>
 
-            <h3>
-              TeamSRK Lucknow
-            </h3>
+    <h3>
+      A HEARTFELT FAN
+    </h3>
 
-            <span className="footer-tagline">
-              ONE KING · ONE BILLION HEARTS
-            </span>
+    <span className="footer-tagline">
+      WITH LOVE, FROM LAVISH
+    </span>
 
-            <span className="footer-line"></span>
+    <span className="footer-line"></span>
 
-          </div>
+  </div>
 
-        </aside>
+</aside>
 
 
         {/* ==================================
@@ -370,8 +370,8 @@ function App() {
               {hasWished
                 ? "♥ WISH SENT TO THE KING"
                 : loading
-                  ? "CONNECTING..."
-                  : "♛ SEND YOUR WISH"}
+                ? "CONNECTING..."
+                : "♛ SEND YOUR WISH"}
 
             </button>
 
