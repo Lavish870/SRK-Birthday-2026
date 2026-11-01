@@ -1,0 +1,1348 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --green: #00ff66;
+  --green-soft: #00bb50;
+  --green-dim: #087c39;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--black);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--green);
+  font-family: 'Share Tech Mono', monospace;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 25px;
+}
+
+/* MATRIX BACKGROUND */
+
+.ascii-rain {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.16;
+}
+
+.ascii-rain pre {
+  position: absolute;
+  top: -100%;
+  color: var(--green);
+  font: 12px/2 'Share Tech Mono', monospace;
+  text-shadow: 0 0 8px var(--green);
+  white-space: pre;
+  animation: matrixFall linear infinite;
+}
+
+@keyframes matrixFall {
+  from { transform: translateY(-10%); }
+  to { transform: translateY(220vh); }
+}
+
+/* MAIN CONTENT */
+
+.birthday-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+/* HEADER */
+
+.top-overlay {
+  width: 100%;
+  text-align: center;
+  animation: dropIn 1s ease both;
+  margin-bottom: 32px;
+}
+
+@keyframes dropIn {
+  from {
+    transform: translateY(-35px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.overline {
+  display: block;
+  color: var(--green-soft);
+  font-size: 11px;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.top-overlay h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(30px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: clamp(2px, 0.7vw, 8px);
+  color: var(--green);
+  text-shadow:
+    0 0 10px var(--green),
+    0 0 30px #00ff6688;
+  line-height: 1.2;
+}
+
+.top-overlay h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(12px, 2vw, 21px);
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-top: 14px;
+  color: #d5ffe5;
+}
+
+.top-overlay p {
+  margin-top: 12px;
+  color: var(--green-soft);
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.top-overlay p span {
+  color: var(--green);
+}
+
+/* SRK ANIMATION */
+
+.srk-stage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.srk-glow {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(25px, 4vw, 45px);
+  font-weight: 900;
+  letter-spacing: clamp(5px, 1vw, 12px);
+  color: var(--green);
+  text-shadow:
+    0 0 15px var(--green),
+    0 0 35px #00ff6677;
+  margin-bottom: 18px;
+}
+
+.ascii-video-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid #00ff6622;
+  box-shadow: 0 0 35px #00ff6609;
+}
+
+.ascii-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.pose-caption {
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--green-soft);
+}
+
+/* GLOBAL COUNTER */
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 35px;
+  gap: 10px;
+}
+
+.counter-label {
+  color: #b0ffc9;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.counter strong {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 800;
+  color: var(--green);
+  text-shadow: 0 0 20px #00ff6688;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--green-soft);
+}
+
+.live-dot {
+  height: 7px;
+  width: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--green);
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.3; }
+}
+
+/* WISH BUTTON */
+
+.wish-section {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.wish-button {
+  min-width: 260px;
+  padding: 17px 32px;
+  border: 1px solid var(--green);
+  border-radius: 6px;
+  background: #020a05;
+  color: var(--green);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow:
+    0 0 12px #00ff6633,
+    inset 0 0 12px #00ff6611;
+  transition: all 0.3s ease;
+}
+
+.wish-button:hover:not(:disabled) {
+  background: #003016;
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 20px #00ff6688,
+    0 0 45px #00ff6633,
+    inset 0 0 15px #00ff6622;
+}
+
+.wish-button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.wish-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.wish-note {
+  color: #648b70;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.error {
+  color: #ff5555;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* PARTY EFFECT */
+
+.party-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00000022;
+}
+
+.party-overlay h2 {
+  color: var(--green);
+  font: 800 clamp(20px, 5vw, 42px) 'Orbitron', sans-serif;
+  text-shadow: 0 0 25px var(--green);
+  animation: partyPop 0.6s ease-out both;
+  text-align: center;
+  padding: 15px;
+}
+
+.party-overlay span {
+  position: absolute;
+  top: -30px;
+  color: var(--green);
+  font-size: 18px;
+  animation: digitalRain 3s linear forwards;
+  text-shadow: 0 0 10px var(--green);
+}
+
+@keyframes digitalRain {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes partyPop {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* TEAM SRK LUCKNOW SIGNATURE */
+
+.team-footer {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+  padding-top: 40px;
+  margin-top: auto;
+}
+
+.footer-line {
+  width: 75px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--green-dim),
+    transparent
+  );
+  margin: 4px 0;
+}
+
+.team-footer p {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #83b895;
+}
+
+.heart {
+  color: var(--green);
+  text-shadow: 0 0 10px var(--green);
+}
+
+.team-footer h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--green);
+  text-shadow: 0 0 12px #00ff6677;
+}
+
+.footer-tagline {
+  color: #477c57;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .app {
+    padding: 38px 20px 25px;
+  }
+
+  .top-overlay {
+    margin-bottom: 26px;
+  }
+
+  .ascii-video-container {
+    max-width: 100%;
+  }
+
+  .counter {
+    margin-top: 28px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 30px 12px 22px;
+  }
+
+  .overline {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .top-overlay {
+    margin-bottom: 25px;
+  }
+
+  .top-overlay h1 {
+    font-size: clamp(25px, 8vw, 38px);
+    letter-spacing: 1px;
+  }
+
+  .top-overlay h2 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  .top-overlay p {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .srk-glow {
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+  }
+
+  .ascii-video-container {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+  }
+
+  .pose-caption {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .counter {
+    margin-top: 28px;
+    gap: 9px;
+  }
+
+  .counter-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .counter strong {
+    font-size: 43px;
+  }
+
+  .live-indicator {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .wish-section {
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  .wish-button {
+    width: min(100%, 310px);
+    min-width: 0;
+    padding: 16px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .wish-note {
+    font-size: 10px;
+  }
+
+  .team-footer {
+    padding-top: 38px;
+    margin-top: 20px;
+  }
+
+  .team-footer h3 {
+    font-size: 14px;
+  }
+
+  .footer-tagline {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .app {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .top-overlay h1 {
+    font-size: 24px;
+  }
+
+  .counter strong {
+    font-size: 36px;
+  }
+
+  .team-footer h3 {
+    font-size: 12px;
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =================================
+   ONE SCREEN - NO SCROLL LAYOUT
+================================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  padding: clamp(10px, 2vh, 22px) 16px;
+}
+
+.birthday-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  min-height: 0;
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  justify-items: center;
+  align-items: center;
+  gap: clamp(5px, 1.2vh, 12px);
+}
+
+/* Compact heading */
+
+.top-overlay {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.overline {
+  font-size: clamp(8px, 1vw, 11px);
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+}
+
+.top-overlay h1 {
+  font-size: clamp(24px, 4.5vw, 52px);
+  line-height: 1.15;
+}
+
+.top-overlay h2 {
+  font-size: clamp(10px, 1.7vw, 17px);
+  margin-top: 5px;
+}
+
+.top-overlay p {
+  margin-top: 4px;
+  font-size: 9px;
+}
+
+/* Video gets remaining screen space */
+
+.srk-stage {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 5px;
+}
+
+.srk-glow {
+  flex-shrink: 0;
+  font-size: clamp(18px, 2.8vw, 30px);
+  margin: 0;
+}
+
+.ascii-video-container {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: none;
+}
+
+.ascii-video {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pose-caption {
+  flex-shrink: 0;
+  margin: 3px 0;
+  font-size: clamp(8px, 1vw, 10px);
+  letter-spacing: 2px;
+}
+
+/* Compact counter */
+
+.counter {
+  margin: 0;
+  gap: 3px;
+}
+
+.counter-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.counter strong {
+  font-size: clamp(28px, 4vw, 43px);
+}
+
+.live-indicator {
+  font-size: 8px;
+}
+
+/* Compact button */
+
+.wish-section {
+  margin: 0;
+  gap: 5px;
+}
+
+.wish-button {
+  min-width: 230px;
+  padding: 12px 25px;
+  font-size: 11px;
+}
+
+.wish-note {
+  font-size: 9px;
+}
+
+/* Footer */
+
+.team-footer {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 7px 0 0;
+  gap: 4px;
+}
+
+.team-footer .footer-line {
+  width: 45px;
+  margin: 1px 0;
+}
+
+.team-footer p {
+  font-size: 8px;
+}
+
+.team-footer h3 {
+  font-size: 12px;
+}
+
+.footer-tagline {
+  font-size: 7px;
+}
+
+/* =================================
+   MOBILE ONE SCREEN
+================================= */
+
+@media (max-width: 600px) {
+
+  .app {
+    padding: 10px 9px;
+  }
+
+  .birthday-container {
+    gap: 5px;
+  }
+
+  .top-overlay h1 {
+    font-size: clamp(23px, 7vw, 34px);
+    letter-spacing: 1px;
+  }
+
+  .top-overlay h2 {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .overline {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .srk-glow {
+    font-size: 19px;
+    letter-spacing: 4px;
+  }
+
+  .pose-caption {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .counter strong {
+    font-size: 32px;
+  }
+
+  .counter-label {
+    font-size: 8px;
+  }
+
+  .live-indicator {
+    font-size: 7px;
+  }
+
+  .wish-button {
+    min-width: 210px;
+    padding: 11px 18px;
+    font-size: 10px;
+  }
+
+  .wish-note {
+    font-size: 8px;
+  }
+
+  .team-footer h3 {
+    font-size: 11px;
+  }
+
+  .team-footer {
+    padding-top: 4px;
+  }
+}
+
+/* Short laptop/mobile screens */
+
+@media (max-height: 650px) {
+  .app {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .birthday-container {
+    gap: 3px;
+  }
+
+  .top-overlay h1 {
+    font-size: clamp(21px, 3.5vw, 34px);
+  }
+
+  .srk-glow {
+    font-size: 17px;
+  }
+
+  .counter strong {
+    font-size: 27px;
+  }
+
+  .wish-button {
+    padding: 9px 20px;
+  }
+
+  .team-footer {
+    padding-top: 2px;
+    gap: 2px;
+  }
+
+  .team-footer .footer-line {
+    display: none;
+  }
+}
+
+/* =====================================
+   DESKTOP + TABLET WIDE SCREEN DESIGN
+   Mobile layout remains untouched
+===================================== */
+
+@media (min-width: 601px) {
+
+  .app {
+    padding: 18px clamp(25px, 4vw, 75px) 12px;
+  }
+
+  .birthday-container {
+    max-width: 1600px;
+    width: 100%;
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    gap: clamp(8px, 1.5vh, 16px);
+  }
+
+  /* Bigger heading */
+
+  .top-overlay {
+    margin: 0;
+  }
+
+  .overline {
+    font-size: 12px;
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+  }
+
+  .top-overlay h1 {
+    font-size: clamp(40px, 4.8vw, 70px);
+    letter-spacing: 6px;
+  }
+
+  .top-overlay h2 {
+    font-size: clamp(16px, 1.8vw, 23px);
+    letter-spacing: 3px;
+    margin-top: 8px;
+  }
+
+  .top-overlay p {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  /* Make ASCII animation use available width */
+
+  .srk-stage {
+    width: 100%;
+    min-height: 0;
+    gap: 8px;
+  }
+
+  .srk-glow {
+    font-size: clamp(30px, 3.2vw, 48px);
+    letter-spacing: 12px;
+    margin-bottom: 5px;
+  }
+
+  .ascii-video-container {
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+    border: 1px solid #00ff6622;
+    box-shadow:
+      0 0 30px #00ff6610,
+      inset 0 0 25px #00ff6608;
+  }
+
+  .ascii-video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .pose-caption {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  /* Larger counter */
+
+  .counter {
+    gap: 6px;
+    margin: 0;
+  }
+
+  .counter-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .counter strong {
+    font-size: clamp(42px, 4vw, 65px);
+  }
+
+  .live-indicator {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  /* Larger interaction */
+
+  .wish-section {
+    margin: 0;
+    gap: 8px;
+  }
+
+  .wish-button {
+    min-width: 310px;
+    padding: 17px 35px;
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  .wish-note {
+    font-size: 11px;
+  }
+
+  /* Signature */
+
+  .team-footer {
+    padding-top: 8px;
+    margin: 0;
+    gap: 5px;
+  }
+
+  .team-footer h3 {
+    font-size: 15px;
+    letter-spacing: 4px;
+  }
+}
+
+/* TABLET SPECIFIC */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .app {
+    padding: 14px 22px 10px;
+  }
+
+  .top-overlay h1 {
+    font-size: clamp(36px, 5.5vw, 52px);
+  }
+
+  .srk-glow {
+    font-size: 28px;
+    letter-spacing: 8px;
+  }
+
+  .counter strong {
+    font-size: 42px;
+  }
+
+  .wish-button {
+    min-width: 270px;
+  }
+}
+
+/* LARGE DESKTOP */
+
+@media (min-width: 1200px) {
+
+  .birthday-container {
+    max-width: 1700px;
+  }
+
+  .ascii-video-container {
+    max-width: 1500px;
+  }
+
+  .top-overlay h1 {
+    font-size: clamp(55px, 5vw, 76px);
+  }
+
+  .srk-glow {
+    font-size: 45px;
+  }
+}
+
+/* =========================================
+   THREE COLUMN DESKTOP EXPERIENCE
+========================================= */
+
+@media (min-width: 601px) {
+
+  .app {
+    padding: 20px 28px;
+  }
+
+  .birthday-container {
+    width: 100%;
+    max-width: 1800px;
+    height: 100%;
+    min-height: 0;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(170px, 0.75fr)
+      minmax(0, 2.7fr)
+      minmax(210px, 0.9fr);
+
+    grid-template-areas: "left center right";
+
+    gap: clamp(15px, 2vw, 32px);
+    align-items: stretch;
+  }
+
+  /* LEFT SIGNATURE PANEL */
+
+  .desktop-left {
+    grid-area: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #00ff6633;
+    background: #020803;
+    box-shadow: inset 0 0 30px #00ff6608;
+    padding: 15px;
+  }
+
+  .desktop-left .team-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 17px;
+  }
+
+  .desktop-left .team-footer p {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .desktop-left .team-footer h3 {
+    font-size: clamp(13px, 1.2vw, 20px);
+    line-height: 1.7;
+    letter-spacing: 2px;
+  }
+
+  .desktop-left .footer-tagline {
+    line-height: 2;
+    font-size: 10px;
+  }
+
+  .desktop-left .footer-line {
+    width: 65%;
+  }
+
+  /* CENTRE MAIN STAGE */
+
+  .desktop-center {
+    grid-area: center;
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+
+    align-items: center;
+    justify-items: center;
+
+    gap: 12px;
+  }
+
+  .desktop-center .top-overlay {
+    width: 100%;
+    margin: 0;
+    padding: 14px 8px;
+
+    border: 1px solid #00ff6633;
+    background: #020803;
+  }
+
+  .desktop-center .top-overlay h1 {
+    font-size: clamp(30px, 3.5vw, 58px);
+  }
+
+  .desktop-center .top-overlay h2 {
+    font-size: clamp(12px, 1.3vw, 19px);
+  }
+
+  .desktop-center .srk-stage {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #00ff6633;
+    background: #000;
+    padding: 12px;
+    overflow: hidden;
+  }
+
+  .desktop-center .srk-glow {
+    font-size: clamp(20px, 2.5vw, 38px);
+    margin: 0 0 8px;
+  }
+
+  .desktop-center .ascii-video-container {
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+
+  .desktop-center .ascii-video {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .desktop-center .pose-caption {
+    margin-top: 8px;
+    font-size: clamp(9px, 1vw, 12px);
+  }
+
+  /* RIGHT FAN PANEL */
+
+  .desktop-right {
+    grid-area: right;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+    padding: 18px;
+
+    border: 1px solid #00ff6633;
+    background: #020803;
+    box-shadow: inset 0 0 30px #00ff6608;
+    text-align: center;
+  }
+
+  .desktop-right .counter {
+    width: 100%;
+    margin: 0;
+    gap: 15px;
+  }
+
+  .desktop-right .counter-label {
+    font-size: clamp(10px, 1vw, 13px);
+    line-height: 1.8;
+    letter-spacing: 2px;
+  }
+
+  .desktop-right .counter strong {
+    font-size: clamp(35px, 3.5vw, 60px);
+    overflow-wrap: anywhere;
+  }
+
+  .desktop-right .live-indicator {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .desktop-right .wish-section {
+    width: 100%;
+    margin: 0;
+    gap: 15px;
+  }
+
+  .desktop-right .wish-button {
+    width: 100%;
+    min-width: 0;
+    padding: 16px 8px;
+    font-size: clamp(9px, 0.9vw, 12px);
+    letter-spacing: 1px;
+  }
+
+  .desktop-right .wish-note {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #82b991;
+  }
+
+  .desktop-right .error {
+    font-size: 11px;
+  }
+}
+
+/* TABLET: THREE COLUMNS, MORE COMPACT */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .app {
+    padding: 12px;
+  }
+
+  .birthday-container {
+    grid-template-columns:
+      minmax(115px, 0.7fr)
+      minmax(0, 2fr)
+      minmax(145px, 0.85fr);
+
+    gap: 10px;
+  }
+
+  .desktop-left,
+  .desktop-right {
+    padding: 9px;
+  }
+
+  .desktop-right {
+    gap: 22px;
+  }
+
+  .desktop-center .top-overlay {
+    padding: 9px 4px;
+  }
+
+  .desktop-center .top-overlay h1 {
+    font-size: clamp(24px, 4vw, 36px);
+  }
+
+  .desktop-center .top-overlay h2 {
+    font-size: 10px;
+  }
+
+  .desktop-center .top-overlay p {
+    font-size: 9px;
+  }
+
+  .desktop-left .team-footer h3 {
+    font-size: 12px;
+  }
+
+  .desktop-left .footer-tagline {
+    font-size: 8px;
+  }
+}
+
+/* SHORT LAPTOP SCREENS */
+
+@media (min-width: 601px) and (max-height: 700px) {
+
+  .app {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .desktop-center .top-overlay {
+    padding: 7px;
+  }
+
+  .desktop-center .top-overlay h1 {
+    font-size: clamp(25px, 3vw, 42px);
+  }
+
+  .desktop-center .srk-glow {
+    font-size: 20px;
+  }
+
+  .desktop-right {
+    gap: 15px;
+  }
+
+  .desktop-left .team-footer {
+    gap: 10px;
+  }
+}
+
+/* MOBILE: ORIGINAL SINGLE COLUMN EXPERIENCE */
+
+@media (max-width: 600px) {
+
+  .birthday-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 5px;
+  }
+
+  .desktop-left {
+    display: none;
+  }
+
+  .desktop-center,
+  .desktop-right {
+    display: contents;
+  }
+
+  .team-footer {
+    display: flex;
+  }
+}
