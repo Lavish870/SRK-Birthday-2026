@@ -35,7 +35,7 @@ Instead of making another ordinary birthday poster or greeting, I wanted to expe
 It started as a fan-made idea, turned into a coding experiment, and eventually became a little digital tribute that I decided to share with everyone.
 
 <p align="center">
-  <img src="./srk-birthday/src/assets/hero.png" width="100%" alt="SRK Birthday 2026 artwork" />
+  <img src="./public/hero.png" width="100%" alt="SRK Birthday 2026 artwork" />
 </p>
 
 <p align="center">
@@ -325,7 +325,7 @@ The project is deployed on Vercel, making the birthday tribute accessible throug
 
 <p align="center">
   <a href="https://srk-birthday.vercel.app/">
-    <img src="./src/assets/hero.png" />
+    <img src="./src/assets/hero.svg" />
   </a>
 </p>
 
